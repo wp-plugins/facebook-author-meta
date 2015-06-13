@@ -29,7 +29,7 @@ This is a simple plugin that allows you to set **author name** that appears on f
 
 = Support Me =
 * If you find this plugin useful, you can appreciate my work by making a 
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=TNFBA9JHH6854&lc=US&item_name=Nazakat%20Ali&currency_code=USD&bn=PP%2dDonationsBF%3alogo11w%2epng%3aNonHosted" target="_new">donation</a> and/or by giving a <a href="https://wordpress.org/support/view/plugin-reviews/facebook-author-meta" target="_new">5-star rating.</a>
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=TNFBA9JHH6854&lc=US&item_name=Nazakat%20Ali&currency_code=USD&bn=PP%2dDonationsBF%3alogo11w%2epng%3aNonHosted" target="_new">donation</a> and/or giving a <a href="https://wordpress.org/support/view/plugin-reviews/facebook-author-meta" target="_new">5-star rating.</a>
 * Your generous support encourages me to continue developing free plugins and other wordpress resources for free. Thanks! 
 
 == Installation ==
