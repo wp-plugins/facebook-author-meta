@@ -14,24 +14,23 @@ This is a simple plugin that allows you to set **author name** that appears on f
 
 = How To Use: =
 * **Please Read Carefully**
-1. By default this plugin automatically sets the **author name*** for all **post/pages** etc. i.e. for all **single** post/pages.
-* This plugin **get the author name** of each **post/page** etc. and set it as a **autor name** for **facebook meta**.
+1. By default this plugin automatically sets the **author name** for all **post/pages** etc. i.e. for all **single** post/pages.
+* This plugin **gets the author name** of each **post/page** etc. and set it as a **autor name** for **facebook meta**.
 * = Note: = Default value is your **public name** i.e name you set in your profile => ***[Display name publicly as]***.
-* You can set your own custom author name for all **post/pages** here ***Settings >> Facebook Author Meta***.
+* You can set your own custom author name for all **post/pages** here **Settings >> Facebook Author Meta**.
 2. By default this plugin does not automatically sets **author name** for **archives, category, tags, hompage, date archives** etc. You can set your **custom author name** for all these pages in settings page of this plugin.
 
 = Note: =
-* If you want to set same author name for whole site  goto ***Settings >> Facebook Author Meta*** and fill both the fields with same author name.
-	* This is useful for **personal blogs** etc or you want to set your **brand name** as **author name**
+* If you want to set **same author name** for whole site  goto ***Settings >> Facebook Author Meta*** and fill both the fields with same author name.
+	* It is useful for **personal blogs** or if you want to set your **brand name** as **author name**
 
 = Feel Free to Ask Quetions =
 * If you have any questions or need help, don't hesitate __ Ask your questions on <a href=\"https://wordpress.org/support/plugin/facebook-author-meta\" target=\"_new\">support page</a>
 
 = Support Me =
-*If you find this plugin useful, you can appreciate me making a 
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=TNFBA9JHH6854&lc=US&item_name=Nazakat%20Ali&currency_code=USD&bn=PP%2dDonationsBF%3alogo11w%2epng%3aNonHosted" target="_new">donation</a> and/or give <a href="https://wordpress.org/support/view/plugin-reviews/facebook-author-meta" target="_new">5-star rating.</a>
+*If you find this plugin useful, you can appreciate me by making a 
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=TNFBA9JHH6854&lc=US&item_name=Nazakat%20Ali&currency_code=USD&bn=PP%2dDonationsBF%3alogo11w%2epng%3aNonHosted" target="_new">donation</a> and/or by giving a <a href="https://wordpress.org/support/view/plugin-reviews/facebook-author-meta" target="_new">5-star rating.</a>
 *Your generous support encourages me to continue developing free plugins and other wordpress resources for free. Thanks! 
-
 
 == Installation ==
 
