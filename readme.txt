@@ -13,9 +13,11 @@ A simple and clean plugin that allow users to add facebook author meta (i.e. Aut
 This is a simple plugin that allows you to set **author name** that appears on **facebook news feeds**, when someone shares on facebook. See screenshots and live demo.
 = LATEST UPDATE =
 Now you can set author's facebook profile link as author name for posts in news feeds. SEE LIVE DEMO and SCREENSHOTS
-To enable this setting goto **Settings >> FB Author Meta** page and enter the full *url* of author's facebook profile 
-.e.g. `https://www.facebook.com/username`.
-If you have any questions feel free to ask me, Thanks.
+
+* To enable this setting goto **Settings >> FB Author Meta** page and enter the full *url* of author's facebook profile 
+ .e.g. *https://www.facebook.com/username*.
+
+*If you have any questions feel free to ask me, Thanks.
 
 = How To Use: =
 * **Please Read Carefully**
