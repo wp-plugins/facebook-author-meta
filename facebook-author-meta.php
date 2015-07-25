@@ -26,7 +26,7 @@ function facebook_author_meta_admin_menu_setup(){
 add_submenu_page(
  'options-general.php', //parent_slug
  'Facebook Author Meta:Settings',//page_title
- 'Facebook Author Meta',//menu_title
+ 'FB Author Meta',//menu_title
  'manage_options',//capability
  'fb-author-meta',//slug
  'facebook_author_meta'//function to use
@@ -88,7 +88,7 @@ register_setting(
 
 add_settings_section(
  'facebook_author_meta_fields_group',
- 'How To Use', 
+ 'How To Use<hr/>', 
  'facebook_author_meta_desc',
  'fb-author-meta'
  );
@@ -106,7 +106,27 @@ add_settings_field(
  'facebook_author_meta_field_singular',
  'fb-author-meta',
  'facebook_author_meta_fields_group'
+ ); add_settings_field(
+    'fbm_check_box',
+    '<h4 style="width:100%;display:block;">Author\'s facebook profile link</h4>',
+    'fbm_check_box_callback',
+    'fb-author-meta',
+    'facebook_author_meta_fields_group'
+ ); add_settings_field(
+ 'facebook_author_meta_single_linked',
+ '1). For Single Post/Pages etc', 
+ 'facebook_author_meta_field_single_linked',
+ 'fb-author-meta',
+ 'facebook_author_meta_fields_group'
  );
+ add_settings_field(
+ 'facebook_author_meta_singuler_linked',
+ '2). For All Other Pages', 
+ 'facebook_author_meta_field_singular_linked',
+ 'fb-author-meta',
+ 'facebook_author_meta_fields_group'
+ );
+
 }
 
 add_action('admin_init', 'facebook_author_meta_init');
@@ -150,6 +170,52 @@ function facebook_author_meta_field_singular() {
  <input id="fbm_singular" name="facebook_author_meta_options[fbm_singular]" class="large-text code"
  value="<?php echo $fbmsingular;?>"/> Default value: none
 
+ 
+ 
+ 
+<?php
+}
+
+//Check Box
+function  fbm_check_box_callback(){
+	$options = get_option('facebook_author_meta_options');
+	#$fbm_check_box = (isset($options['fbm_check_box'])) ? $options['fbm_check_box'] : '';
+     ?>
+   <input type="checkbox" id="fbm_check_box" name="facebook_author_meta_options[fbm_check_box]" 
+   value="1" <?php echo checked( 1, $options['fbm_check_box'], false ) ?>/>
+   <label for="fbm_check_box">Check this box to enable author's facebook profile link. See Live Demo Below</label><br/>
+   If you want to enable facebook author profile link, enter the full url of author's facebook profile e.g.
+   <i>https://www.facebook.com/username</i>
+     
+
+ 
+<?php
+}
+
+
+
+/* filed output */
+function facebook_author_meta_field_single_linked() {
+ $options = get_option('facebook_author_meta_options');
+ $fbmsingle_linked = (isset($options['fbm_single_linked'])) ? $options['fbm_single_linked'] : '';
+ $fbmsingle_linked = esc_textarea($fbmsingle_linked); //sanitise output
+?>
+ <input id="fbm_single_linked" name="facebook_author_meta_options[fbm_single_linked]" class="large-text code"
+ value="<?php echo $fbmsingle_linked;?>"/>Default value: none
+
+<?php
+}
+
+
+/* filed output */
+function facebook_author_meta_field_singular_linked() {
+ $options = get_option('facebook_author_meta_options');
+ $fbmsingular_linked = (isset($options['fbm_singular_linked'])) ? $options['fbm_singular_linked'] : '';
+ $fbmsingular_linked = esc_textarea($fbmsingular_linked); //sanitise output
+?>
+ <input id="fbm_singular_linked" name="facebook_author_meta_options[fbm_singular_linked]" class="large-text code"
+ value="<?php echo $fbmsingular_linked;?>"/> Default value: none
+
 <?php
 }
 
@@ -168,23 +234,42 @@ function fbm_values(){
 	
 	$fbm_options = get_option( 'facebook_author_meta_options');
 	$single_author = trim($fbm_options['fbm_single']);
+	$single_author_linked = trim($fbm_options['fbm_single_linked']);
 	$singular_author = trim($fbm_options['fbm_singular']);
+	$singular_author_linked = trim($fbm_options['fbm_singular_linked']);
+	$fbm_check_box = trim($fbm_options['fbm_check_box']);
 	
 
 	
 	if(is_singular())
-	{
-			echo "<meta name=\"author\" content=\"";check($single_author);echo "\"/>";
+	{	if(isset($fbm_check_box) and $fbm_check_box == 1)
+		{
+				echo "<meta property=\"article:author\" content=\"$single_author_linked\">";
+		}
+		else
+		{
+				echo "<meta name=\"author\" content=\"";check($single_author);echo "\"/>";
+		}
 	}
-	else{ 
-	if(isset($singular_author) && $singular_author !== "" )
-	{
-					echo "<meta name=\"author\" content=\"".$singular_author."\"/>";}
+	else
+	{ 
+		if(isset($fbm_check_box) and $fbm_check_box == 1)
+		{
+				echo "<meta property=\"article:author\" content=\"$singular_author_linked\">";
+		}
+		else
+		{
+	
+			if(isset($singular_author) && $singular_author !== "" )
+			{
+				echo "<meta name=\"author\" content=\"".$singular_author."\"/>";
+			}
 		
+		}
 	}
 
 }
-add_action('wp_head', 'fbm_values');
+add_action('wp_head', 'fbm_values',3);
 
 add_action('admin_notices', 'fbm_admin_notice');
 function fbm_admin_notice() {
@@ -195,7 +280,7 @@ if ( current_user_can( 'install_plugins' ) )
 		//Check that the user hasn't already clicked to ignore the message 
      if ( ! get_user_meta($user_id, 'fbm_ignore_notice') ) {
         echo '<div class="updated"><p>';
-        printf(__('Go to settings page to customize the <b>Facebook Author Meta</b> | <a href="%1$s">[Hide Notice]</a>'), '?fbm_nag_ignore=0');
+        printf(__('Go to <a href="options-general.php?page=fb-author-meta">settings</a> page to customize the <b>Facebook Author Meta</b> | <a href="%1$s">[Hide Notice]</a>'), '?fbm_nag_ignore=0');
         echo "</p></div>";
      }
     }
