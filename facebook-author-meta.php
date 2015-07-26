@@ -3,9 +3,9 @@
  * Plugin Name: Facebook Author Meta
  * Plugin URI: https://wordpress.org/plugins/facebook-author-meta/
  * Description: A simple and clean plugin that allows users to add facebook author meta (i.e. Author By info in facebook news feeds) to their websites/blogs.
- * Version: 1.0
  * Author: Nazakat ALi
  * Author URI: https://profiles.wordpress.org/nazakatali32
+ * Version: 1.0
  * License: GPL2
  */
  /*  Copyright 2014  Nazakat ALi  (email : nazakatali32@gmail.com)
