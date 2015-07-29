@@ -5,7 +5,7 @@
  * Description: A simple and clean plugin that allows users to add facebook author meta (i.e. Author By info in facebook news feeds) to their websites/blogs.
  * Author: Nazakat ALi
  * Author URI: https://profiles.wordpress.org/nazakatali32
- * Version: 1.0
+ * Version: 1.1
  * License: GPL2
  */
  /*  Copyright 2014  Nazakat ALi  (email : nazakatali32@gmail.com)
